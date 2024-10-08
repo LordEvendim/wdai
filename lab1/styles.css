@@ -1,0 +1,26 @@
+button {
+  color: blue;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+  cursor: pointer;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+#sq {
+  margin: 10px;
+}
+
+#hor {
+  display: flex;
+  flex-direction: row;
+}
