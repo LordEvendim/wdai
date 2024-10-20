@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="../styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav
+      style="
+        height: 60px;
+        background: white;
+        display: flex;
+        align-items: center;
+        border: solid rgb(220, 220, 220);
+        border-width: 0px 0px 1px 0px;
+      "
+    >
+      <div
+        style="
+          margin: 0px auto;
+          width: 80%;
+          height: 60px;
+          background: transparent;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
+        <a href="../index.html" style="cursor: pointer">
+          <div style="font-weight: 800; font-size: 20px">Racing champions</div>
+        </a>
+        <div style="display: flex">
+          <a
+            href="./galeria.html"
+            style="
+              display: block;
+              background: white;
+              margin-right: 30px;
+              padding: 10px 20px;
+              border-radius: 10px;
+              border: solid rgb(220, 220, 220);
+              border-width: 0px 1px 1px 0px;
+              color: rgb(40, 40, 40);
+            "
+            >gallery</a
+          >
+          <a
+            href="./kontakt.html"
+            style="
+              display: block;
+              background: white;
+              padding: 10px 20px;
+              border-radius: 10px;
+              border: solid rgb(220, 220, 220);
+              border-width: 0px 1px 1px 0px;
+              color: rgb(40, 40, 40);
+            "
+            >contact</a
+          >
+        </div>
+      </div>
+    </nav>
+    <div style="height: 100px; text-align: center; margin-top: 30px">
+      <h1 style="font-size: 40px; font-weight: 800; color: rgb(49, 49, 49)">
+        Gallery
+      </h1>
+    </div>
+    <video
+      id="gallery-photo"
+      style="width: 1000px; height: 500px"
+      autoplay
+      muted
+      loop
+    >
+      <source src="../assets/gameplay.mp4" type="video/mp4" />
+    </video>
+    <div style="display: flex; flex-wrap: wrap">
+      <img src="../assets/1.jpg" id="gallery-photo" />
+      <img src="../assets/2.jpg" id="gallery-photo" />
+      <img src="../assets/3.jpg" id="gallery-photo" />
+      <img src="../assets/4.jpg" id="gallery-photo" />
+      <img src="../assets/5.jpg" id="gallery-photo" />
+    </div>
+  </body>
+  <footer
+    style="
+      display: flex;
+      width: 100%;
+      height: 50px;
+      justify-content: center;
+      align-items: center;
+      opacity: 0.4;
+    "
+  >
+    Bartosz Gacek
+  </footer>
+  <script src="/script.js"></script>
+</html>

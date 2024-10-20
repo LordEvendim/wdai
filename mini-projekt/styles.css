@@ -1,0 +1,80 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+
+  font-family: "Exo 2";
+}
+
+button {
+  color: blue;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+  cursor: pointer;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+#sq {
+  margin: 10px;
+}
+
+#hor {
+  display: flex;
+  flex-direction: row;
+}
+
+#gallery-photo {
+  display: block;
+  width: 800px;
+  height: 400px;
+  background: gray;
+  margin: 0px auto;
+  margin-bottom: 100px;
+  border-radius: 10px;
+  -webkit-box-shadow: 8px 8px 22px -11px rgba(128, 128, 128, 1);
+  -moz-box-shadow: 8px 8px 22px -11px rgba(128, 128, 128, 1);
+  box-shadow: 8px 8px 22px -11px rgba(128, 128, 128, 1);
+  transition: all 50ms;
+}
+
+#gallery-photo:hover {
+  transform: scale(1.02);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  margin: 20px 0px;
+}
+
+.form-group > label {
+  margin-bottom: 4px;
+  margin-left: 4px;
+}
+
+.form-group > input,
+select {
+  background: white;
+  border-radius: 5px;
+  border: solid 1px rgb(203, 203, 203);
+  padding: 8px;
+  font-size: 14px;
+}
+
+.form-group > textarea {
+  padding: 8px;
+  border-radius: 5px;
+  border: solid 1px rgb(203, 203, 203);
+  resize: none;
+  height: 150px;
+}
