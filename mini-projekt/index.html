@@ -66,6 +66,7 @@
       </div>
     </nav>
     <div
+      id="home-highlight-wrapper"
       style="
         height: 600px;
         width: 100%;
@@ -73,7 +74,6 @@
         overflow: hidden;
         position: relative;
         display: grid;
-        grid-template-columns: 1fr 1fr;
       "
     >
       <div style="overflow: hidden; position: relative">
@@ -101,6 +101,19 @@
           </div>
         </div>
         <div
+          style="
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            height: 300px;
+            width: 600px;
+            background: rgb(241, 241, 241);
+            transform: rotate(15deg) translate(-50%, -25%) skew(-10deg, -20deg);
+            z-index: 1;
+          "
+        ></div>
+        <div
+          id="home-decorators"
           style="
             position: absolute;
             left: 0px;
@@ -197,5 +210,4 @@
   >
     Bartosz Gacek
   </footer>
-  <script src="/script.js"></script>
 </html>
