@@ -131,10 +131,24 @@ select {
   #gallery-video {
     width: 90%;
   }
+
+  #main-image {
+    width: 100%;
+    position: relative;
+  }
+
+  #home-title {
+    top: -20px;
+  }
 }
 
 @media (width <= 900px) {
   #contact-form {
     width: 90%;
+  }
+
+  #main-image {
+    width: 100%;
+    position: relative;
   }
 }
