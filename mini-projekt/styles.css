@@ -35,7 +35,7 @@ td {
 #gallery-photo {
   display: block;
   width: 800px;
-  height: 400px;
+  height: auto;
   background: gray;
   margin: 0px auto;
   margin-bottom: 100px;
@@ -50,13 +50,10 @@ td {
   display: block;
   width: 800px;
   height: 400px;
-  background: gray;
+  background: transparent;
   margin: 0px auto;
   margin-bottom: 100px;
   border-radius: 10px;
-  -webkit-box-shadow: 8px 8px 22px -11px rgba(128, 128, 128, 1);
-  -moz-box-shadow: 8px 8px 22px -11px rgba(128, 128, 128, 1);
-  box-shadow: 8px 8px 22px -11px rgba(128, 128, 128, 1);
   transition: all 50ms;
   width: 1000px;
   height: 500px;
