@@ -12,7 +12,6 @@
   <body>
     <nav
       style="
-        height: 60px;
         background: white;
         display: flex;
         align-items: center;
@@ -20,24 +19,15 @@
         border-width: 0px 0px 1px 0px;
       "
     >
-      <div
-        style="
-          margin: 0px auto;
-          width: 80%;
-          height: 60px;
-          background: transparent;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        "
-      >
+      <div id="navigation-container">
         <a href="./index.html" style="cursor: pointer">
-          <div style="font-weight: 800; font-size: 20px">Racing champions</div>
+          <div style="font-weight: 800" id="logo">Racing champions</div>
         </a>
         <div style="display: flex">
           <a
             href="./pages/galeria.html"
             style="
+              text-align: center;
               display: block;
               background: white;
               margin-right: 30px;
@@ -52,6 +42,7 @@
           <a
             href="./pages/kontakt.html"
             style="
+              text-align: center;
               display: block;
               background: white;
               padding: 10px 20px;
@@ -77,11 +68,7 @@
       "
     >
       <div style="overflow: hidden; position: relative">
-        <img
-          id="main-image"
-          src="./assets/5.jpg"
-          style="height: 100%; position: relative; left: -150px"
-        />
+        <img id="main-image" src="./assets/5.jpg" style="position: relative" />
       </div>
       <div
         style="

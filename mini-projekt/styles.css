@@ -112,9 +112,42 @@ select {
   box-shadow: 8px 8px 22px -11px rgba(128, 128, 128, 1);
 }
 
+#navigation-container {
+  margin: 10px auto;
+  width: 80%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#logo {
+  font-size: 20px;
+}
+
 @media (width <= 1250px) {
   #gallery-photo {
     width: 90%;
+  }
+
+  #logo {
+    font-size: 40px;
+  }
+
+  #navigation-container {
+    margin: 10px;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  #navigation-container > div {
+    margin: 20px;
+
+    a {
+      width: 260px;
+      height: 50px;
+      font-weight: 600;
+    }
   }
 
   #home-highlight-wrapper {
@@ -131,6 +164,7 @@ select {
 
   #main-image {
     width: 100%;
+    height: auto;
     position: relative;
   }
 
@@ -142,10 +176,5 @@ select {
 @media (width <= 900px) {
   #contact-form {
     width: 90%;
-  }
-
-  #main-image {
-    width: 100%;
-    position: relative;
   }
 }
