@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script src="game.js" defer></script>
+</html>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: relative;
+    overflow: hidden;
+  }
+
+  #bg {
+    width: 100%;
+    height: 100%;
+  }
+  body {
+    cursor: none;
+  }
+
+  #aim {
+    position: absolute;
+    pointer-events: none;
+
+    top: 0px;
+    left: 0px;
+
+    height: 300px;
+    width: 300px;
+
+    z-index: 1000;
+
+    transform: translate(-50%, -50%);
+  }
+
+  .life {
+    width: 100px;
+    height: 100px;
+  }
+
+  #end-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .zombie {
+    position: absolute;
+    width: 200px;
+    height: 312px;
+    background: url("./assets/walkingdead.png");
+    animation: walk 1s steps(10) infinite;
+  }
+
+  @keyframes walk {
+    from {
+      background-position: 0px;
+    }
+    to {
+      background-position: -2000px;
+    }
+  }
+</style>
+<body>
+  <img src="./assets/board-bg.jpg" id="bg" alt="Fullscreen image" />
+  <img src="./assets/aim.png" id="aim" />
+  <div
+    style="position: absolute; top: 20px; left: 20px; display: flex; gap: 10px"
+    id="life-container"
+  ></div>
+  <div
+    style="
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 80px;
+      color: white;
+      font-weight: bold;
+    "
+    id="score"
+  >
+    0
+  </div>
+  <div id="end-wrapper">
+    <div
+      id="end-modal"
+      style="
+        background-color: white;
+        width: 700px;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      "
+    >
+      <div>THE ZOMBIES ATE YOUR BRAINS</div>
+      <button id="reset">Restart</button>
+    </div>
+  </div>
+</body>
