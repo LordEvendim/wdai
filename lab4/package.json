@@ -6,11 +6,16 @@
   "type": "module",
   "dependencies": {
     "@sequelize/sqlite3": "^7.0.0-alpha.43",
+    "axios": "^1.7.7",
     "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
     "sequelize": "^6.37.5",
     "sqlite3": "^5.1.7"
   },
   "scripts": {
-    "dev": "node index.js"
+    "dev": "yarn dev1 & yarn dev2 & yarn dev3",
+    "dev1": "node ./service1/index.js",
+    "dev2": "node ./service2/index.js",
+    "dev3": "node ./service3/index.js"
   }
 }

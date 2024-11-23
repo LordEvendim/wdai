@@ -5,14 +5,14 @@ const sequelize = new Sequelize("sqlite::memory:");
 export const User = sequelize.define(
   "User",
   {
-    // Model attributes are defined here
-    firstName: {
+    email: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
-    lastName: {
+    password: {
       type: DataTypes.STRING,
-      // allowNull defaults to true
+      allowNull: false,
     },
   },
   {
