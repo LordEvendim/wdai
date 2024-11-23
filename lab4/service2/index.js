@@ -1,9 +1,20 @@
+dotenv.config();
+
 import express from "express";
 import { Order } from "./models.js";
 import axios from "axios";
+import dotenv from "dotenv";
+import { isAdmin } from "./isAdmin.js";
 
 const app = express();
+app.use(express.json());
 const port = 3001;
+
+app.get("/api/orders/all", async (req, res) => {
+  const orders = await Order.findAll();
+
+  res.send(orders);
+});
 
 app.get("/api/orders/:userId", async (req, res) => {
   const { userId } = req.params;
@@ -12,7 +23,7 @@ app.get("/api/orders/:userId", async (req, res) => {
   res.send(orders);
 });
 
-app.post("/api/orders", async (req, res) => {
+app.post("/api/orders", isAdmin, async (req, res) => {
   const { userId, bookId, quantity } = req.body;
   try {
     const response = await axios.get(
@@ -33,7 +44,7 @@ app.post("/api/orders", async (req, res) => {
   }
 });
 
-app.delete("/api/orders/:id", async (req, res) => {
+app.delete("/api/orders/:id", isAdmin, async (req, res) => {
   const { id } = req.params;
   const order = await Order.findByPk(id);
 
@@ -45,14 +56,13 @@ app.delete("/api/orders/:id", async (req, res) => {
   }
 });
 
-app.patch("/api/orders/:id", async (req, res) => {
+app.patch("/api/orders/:id", isAdmin, async (req, res) => {
   const { id } = req.params;
-  const { quantity } = req.body;
+  const orderPatch = req.body;
   const order = await Order.findByPk(id);
 
   if (order) {
-    order.quantity = quantity;
-    await order.save();
+    await order.update(orderPatch);
     res.send({ message: "Order updated successfully" });
   } else {
     res.status(404).send({ error: "Order not found" });

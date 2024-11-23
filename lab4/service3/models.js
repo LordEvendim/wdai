@@ -1,6 +1,9 @@
 import { Sequelize, DataTypes } from "sequelize";
 
-const sequelize = new Sequelize("sqlite::memory:");
+const sequelize = new Sequelize({
+  dialect: "sqlite",
+  storage: `./service3/sequelize.sqlite`,
+});
 
 export const User = sequelize.define(
   "User",
@@ -9,6 +12,10 @@ export const User = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
+    },
+    role: {
+      type: DataTypes.STRING,
+      defaultValue: "user",
     },
     password: {
       type: DataTypes.STRING,
@@ -21,6 +28,5 @@ export const User = sequelize.define(
 );
 
 (async () => {
-  await sequelize.sync({ force: true });
-  // Code here
+  await sequelize.sync();
 })();

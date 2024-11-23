@@ -1,6 +1,9 @@
 import { Sequelize, DataTypes } from "sequelize";
 
-const sequelize = new Sequelize("sqlite::memory:");
+const sequelize = new Sequelize({
+  dialect: "sqlite",
+  storage: `./service2/sequelize.sqlite`,
+});
 
 export const Order = sequelize.define(
   "Order",
@@ -24,6 +27,5 @@ export const Order = sequelize.define(
 );
 
 (async () => {
-  await sequelize.sync({ force: true });
-  // Code here
+  await sequelize.sync();
 })();

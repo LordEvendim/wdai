@@ -1,6 +1,10 @@
 import { Sequelize, DataTypes } from "sequelize";
+import path from "path";
 
-const sequelize = new Sequelize("sqlite::memory:");
+const sequelize = new Sequelize({
+  dialect: "sqlite",
+  storage: `./service1/sequelize.sqlite`,
+});
 
 export const Book = sequelize.define(
   "Book",
@@ -24,6 +28,5 @@ export const Book = sequelize.define(
 );
 
 (async () => {
-  await sequelize.sync({ force: true });
-  // Code here
+  await sequelize.sync();
 })();

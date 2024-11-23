@@ -1,7 +1,10 @@
-import express from "express";
 import { Book } from "./models.js";
+import { isAdmin } from "./isAdmin.js";
+import express from "express";
 
 const app = express();
+app.use(express.json());
+
 const port = 3000;
 
 app.get("/api/book", async (req, res) => {
@@ -21,14 +24,14 @@ app.get("/api/book/:id", async (req, res) => {
   }
 });
 
-app.post("/api/book", async (req, res) => {
+app.post("/api/book", isAdmin, async (req, res) => {
   const { title, author, year } = req.body;
   const book = await Book.create({ title, author, year });
 
   res.send({ id: book.id });
 });
 
-app.delete("/api/book/:id", async (req, res) => {
+app.delete("/api/book/:id", isAdmin, async (req, res) => {
   const { id } = req.params;
   const book = await Book.findByPk(id);
 
