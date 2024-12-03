@@ -46,11 +46,12 @@ app.post("/api/login", async (req, res) => {
       return res.status(401).json({ message: "Invalid credentials" });
     }
 
-    const token = jwt.sign({ email, role: user.role }, secretKey, {
+    const token = jwt.sign({ email, role: user.role }, "secret", {
       expiresIn: "1h",
     });
     res.json({ id: user.id, token });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: "Internal server error" });
   }
 });
