@@ -50,7 +50,7 @@ app.delete("/api/orders/:id", isAdmin, async (req, res) => {
 
   if (order) {
     await order.destroy();
-    res.send({ message: "Order deleted successfully" });
+    res.send({ id });
   } else {
     res.status(404).send({ error: "Order not found" });
   }

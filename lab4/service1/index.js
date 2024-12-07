@@ -37,7 +37,7 @@ app.delete("/api/book/:id", isAdmin, async (req, res) => {
 
   if (book) {
     await book.destroy();
-    res.send({ message: "Book deleted successfully" });
+    res.send({ id });
   } else {
     res.status(404).send({ error: "Book not found" });
   }
