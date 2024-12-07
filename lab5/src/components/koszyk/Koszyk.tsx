@@ -1,11 +1,7 @@
 import React from "react";
 import { Product } from "./Product";
 
-interface ComponentProps {
-  nazwa: string;
-}
-
-export const Koszyk: React.FC<ComponentProps> = ({}) => {
+export const Koszyk: React.FC = () => {
   return (
     <>
       <Product nazwa="Jablko" />
